@@ -1,0 +1,9 @@
+:root {
+    --orientation: row;
+}
+
+@media screen {
+    :root {
+        --orientation: column;
+    }
+}
