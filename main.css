@@ -5,5 +5,10 @@
 @media screen {
     :root {
         --orientation: column;
+        --always-vis: True;
+    }
+
+    #navbar {
+        
     }
 }
