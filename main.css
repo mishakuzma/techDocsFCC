@@ -2,6 +2,9 @@
     --orientation: row;
 }
 
+#navbar {
+    position: fixed;
+}
 @media screen {
     :root {
         --orientation: column;
