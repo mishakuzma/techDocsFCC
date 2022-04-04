@@ -1,11 +1,15 @@
 :root {
-    --navbar-position: absolute;
-    --doc-top-space: 15%;
+    --navbar-position: static;
+    --doc-top-space: 0%;
     --doc-left-space: 0;
-    --nav-left: 25%;
+    --nav-left: 0;
     --nav-width: auto;
-    --nav-height: var(--doc-top-space);
-    --margin-size: 5% 0;
+    --nav-height: auto;
+    --section-margin-size: 5% 0;
+    --navlink-margin-size: 3% 0;
+    --footer-top: 15%;
+    --navheader-position: sticky;
+    --navlink-padding: 10%;
 }
 
 @media screen and (min-width: 700px) {
@@ -16,20 +20,35 @@
         --doc-left-space: 15%;
         --nav-left: 0;
         --nav-width: var(--doc-left-space);
-        --nav-height: auto;
+        --nav-height: 100%;
+        --footer-top: 0%;
+        --navheader-position: static;
+        --navlink-padding: 20%;
     }
 }
 
 #navbar {
     position: var(--navbar-position);
     top: 0;
+    /* padding: 1em; */
     left: var(--nav-left);
     height: var(--nav-height);
     width: var(--nav-width);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    justify-content: space-evenly;
+    justify-items: stretch;
+    flex-wrap: nowrap;
+    gap: 10px;
+
     text-align: center;
+}
+
+.nav-link {
+    margin: var(--navlink-margin-size);
+    border-top: 2px solid;
+    padding-top: var(--navlink-padding);
 }
 
 #main-doc {
@@ -43,11 +62,30 @@ header {
     font-weight: bold;
 }
 
+#navbar header {
+    font-size: larger;
+    position: var(--navheader-position);
+    top: -1px;
+}
 section {
-    margin: var(--margin-size)
+    margin: var(--section-margin-size)
+}
+
+code {
+    display: block;
 }
 
 footer {
-    position: static;
-    bottom: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(172, 170, 170);
+    /* top: var(--footer-top); */
+    bottom: -0.5em;
+    height: 1em;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
 }
