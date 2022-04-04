@@ -1,17 +1,43 @@
 :root {
-    --orientation: row;
+    --navbar-position: absolute;
+    --doc-top-space: 15%;
+    --doc-left-space: 0;
+    --nav-left: 25%;
+    --nav-width: auto;
+    --nav-height: var(--doc-top-space);
+}
+
+@media screen and (min-width: 800px) {
+    /* For desktops */
+    :root {
+        --navbar-position: fixed;
+        --doc-top-space: 0;
+        --doc-left-space: 15%;
+        --nav-left: 0;
+        --nav-width: var(--doc-left-space);
+        --nav-height: auto;
+    }
 }
 
 #navbar {
-    position: fixed;
+    position: var(--navbar-position);
+    top: 0;
+    left: var(--nav-left);
+    height: var(--nav-height);
+    width: var(--nav-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-@media screen {
-    :root {
-        --orientation: column;
-        --always-vis: True;
-    }
 
-    #navbar {
-        
-    }
+#main-doc {
+    position: relative;
+    top: var(--doc-top-space);
+    left: var(--doc-left-space);
+    width: 95%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
 }
